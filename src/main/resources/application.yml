@@ -1,0 +1,25 @@
+#server external configurations
+server: 
+  servlet:
+    context-path: /maven-spring-boot
+  port: 8383
+  ssl:
+    key-store-provider: SUN
+    key-store-type: JKS
+    key-store: classpath:server.jks
+    key-alias: server
+    key-store-password: server
+    
+#cache external configuration
+spring:
+  cache:
+    type: ehcache #optional , it is just for telling we are using ehcache, however spring auto understand it
+    ehcache:
+      config: classpath:ehcache.xml
+      
+
+management:
+  server:
+    port: 9090
+    servlet:
+      context-path: /management # can we keep server.servlet.context-path in sync with this
