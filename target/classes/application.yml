@@ -18,8 +18,14 @@ spring:
       config: classpath:ehcache.xml
       
 
+# # to enable all actutor management.endpoints.web.exposure.include=*.,Alternatively, we could list endpoints which should be enabledd
 management:
   server:
     port: 9090
     servlet:
       context-path: /management # can we keep server.servlet.context-path in sync with this
+  endpoints:
+      web:
+        exposure:
+          include: "*"
+          
